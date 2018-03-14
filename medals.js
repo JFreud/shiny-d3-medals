@@ -1,5 +1,6 @@
 svg = document.getElementById("svgfield");
 switch_b = document.getElementById("switch");
+header = document.getElementById("header");
 
 var country = "china";
 var china_medals = [1, 6, 2];
@@ -9,11 +10,13 @@ var makeCircles = function() {
     if (country == "china") {
 	var medals = d3.selectAll('circle').data(china_medals);
 	medals.attr('r', function(d){return d*5});
+  header.innerHTML = country;
 	country = "norway";
     }
     else{
 	var medals = d3.selectAll('circle').data(norway_medals);
 	medals.attr('r', function(d){return d*5});
+  header.innerHTML = country;
 	country = "china";
     }
 }
